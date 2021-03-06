@@ -1,0 +1,4 @@
+-> First Install jdk 1.8
+-> Install mySQL server with workbench
+-> Install Eclipse
+-> Install spring plugin in eclipse
