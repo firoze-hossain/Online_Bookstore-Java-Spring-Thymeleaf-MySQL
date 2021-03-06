@@ -1,0 +1,59 @@
+body {
+	
+}
+
+hr {
+	border: none;
+	height: 1px;
+	color: #333;
+	background-color: #333;
+}
+
+.container {
+	width: 90%;
+}
+
+.page-top {
+	margin-top: -70px;
+}
+
+.navbar {
+	margin-bottom: 20px;
+}
+
+.box {
+	border: 1px solid red;
+}
+
+.mb-50 {
+	margin-bottom: 50px;
+}
+
+.feature-book {
+	font-size: 20px;
+	padding: 7px;
+	background: black;
+	color: white;
+}
+
+.item {
+	max-height: 200px !important;
+}
+
+.carousel-caption {
+	padding-bottom: 0px !important;
+}
+
+.section-headline{
+	font-size: 24px;
+    color: #fbfbfb;
+    margin: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.section-headline span {
+	background-color: #231F20;
+    padding: 5px 22px;
+	
+}
