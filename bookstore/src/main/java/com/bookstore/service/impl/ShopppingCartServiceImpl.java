@@ -10,10 +10,10 @@ import com.bookstore.domain.CartItem;
 import com.bookstore.domain.ShoppingCart;
 import com.bookstore.repository.ShoppingCartRepository;
 import com.bookstore.service.CartItemService;
-import com.bookstore.service.ShopppingCartService;
+import com.bookstore.service.ShoppingCartService;
 
 @Service
-public class ShopppingCartServiceImpl implements ShopppingCartService {
+public class ShopppingCartServiceImpl implements ShoppingCartService {
 @Autowired
 private CartItemService cartItemService;
 @Autowired
@@ -34,6 +34,18 @@ private ShoppingCartRepository  shoppingCartRepository;
 		shoppingCartRepository.save(shoppingCart);
 		return shoppingCart;
 		
+	}
+
+	@Override
+	public void clearShoppingCart(ShoppingCart shoppingCart) {
+		List<CartItem> cartItemList=cartItemService.findByShoppingCart(shoppingCart);
+		for(CartItem cartItem : cartItemList) {
+			cartItem.setShoppingCart(null);
+			cartItemService.save(cartItem);
+		}
+		
+		shoppingCart.setGrandTotal(new BigDecimal(0));
+		shoppingCartRepository.save(shoppingCart);
 	}
 
 }

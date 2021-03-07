@@ -16,7 +16,8 @@ import com.bookstore.domain.ShoppingCart;
 import com.bookstore.domain.User;
 import com.bookstore.service.BookService;
 import com.bookstore.service.CartItemService;
-import com.bookstore.service.ShopppingCartService;
+import com.bookstore.service.ShoppingCartService;
+import com.bookstore.service.ShoppingCartService;
 import com.bookstore.service.UserService;
 
 @Controller
@@ -26,7 +27,7 @@ public class ShoppingCartController {
 	@Autowired
 	private UserService userService;
 	@Autowired
-	private ShopppingCartService shoppingCartService;
+	private ShoppingCartService shoppingCartService;
 	
 	@Autowired
 	private CartItemService cartItemService;
