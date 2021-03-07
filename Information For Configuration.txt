@@ -1,0 +1,12 @@
+-> First Install jdk 1.8
+-> Install mySQL server with workbench
+-> Install Eclipse
+-> Install spring plugin in eclipse
+-> Import project in eclipse as maven project
+-> Admin's username & Password(admin & roze82)
+-> User's username and password(roze & roze82)
+
+#Database Connection
+spring.datasource.url=jdbc:mysql://localhost:3306/bookstore
+spring.datasource.username="Your mySQl Database name"
+spring.datasource.password="Your mySQL Database Password"
