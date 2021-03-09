@@ -325,7 +325,7 @@
 											<div class="form-group">
 												<label for="billingDivision">* Division</label> <select
 													id="billingDivision" class="form-control billingAddress"
-													th:name="billingAddress"
+													th:name="billingAddressDivision"
 													th:value="${billingAddress.billingAddressDivision}"
 													required="required">
 													<option value="" disabled="disabled">Please select
@@ -453,7 +453,7 @@
 	</div>
 	<!-- end of container -->
 
-
+<div th:replace="common/header :: footer"/>
 	<div th:replace="common/header :: body-bottom-scripts" />
 </body>
 </html>

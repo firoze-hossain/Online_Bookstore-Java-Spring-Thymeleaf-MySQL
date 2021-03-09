@@ -28,5 +28,10 @@ private BookRepository bookRepository;
 		
 		return bookRepository.findById(id).orElse(null);
 	}
+	@Override
+	public void removeOne(Long id) {
+		bookRepository.deleteById(id);
+		
+	}
 
 }
