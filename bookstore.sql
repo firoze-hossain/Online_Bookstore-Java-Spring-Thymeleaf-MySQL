@@ -34,7 +34,7 @@ CREATE TABLE `billing_address` (
   `order_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKjg6ji2vsfuqlc9vhvy4yi449h` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -72,7 +72,7 @@ CREATE TABLE `book` (
   `shipping_weight` double NOT NULL,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -99,7 +99,7 @@ CREATE TABLE `book_to_cart_item` (
   PRIMARY KEY (`id`),
   KEY `FK254kg9aacrs8uqa93ijc3garu` (`book_id`),
   KEY `FKbdyqr108hc7c06xtem0dhv9mk` (`cart_item_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -130,7 +130,7 @@ CREATE TABLE `cart_item` (
   KEY `FKis5hg85qbs5d91etr4mvd4tx6` (`book_id`),
   KEY `FKen9v41ihsnhcr0i7ivsd7i84c` (`order_id`),
   KEY `FKe89gjdx91fxnmkkssyoim8xfu` (`shopping_cart_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +152,7 @@ DROP TABLE IF EXISTS `hibernate_sequence`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `hibernate_sequence` (
   `next_val` bigint DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -179,7 +179,7 @@ CREATE TABLE `password_reset_token` (
   `user_id` bigint NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK5lwtbncug84d4ero33v3cfxvl` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -211,7 +211,7 @@ CREATE TABLE `payment` (
   `order_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKt7a73xusjdnnsuespcitb683h` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -235,7 +235,7 @@ CREATE TABLE `role` (
   `role_id` int NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`role_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,7 +267,7 @@ CREATE TABLE `shipping_address` (
   `order_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKatbgaqk1hhhhkyyuebylpeh7q` (`order_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -293,7 +293,7 @@ CREATE TABLE `shopping_cart` (
   `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK254qp5akhuaaj9n5co4jww3fk` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -323,7 +323,7 @@ CREATE TABLE `user` (
   `phone` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -355,7 +355,7 @@ CREATE TABLE `user_billing` (
   `user_payment_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK3v6hd7snyc3g9s72u41k1fydu` (`user_payment_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -391,7 +391,7 @@ CREATE TABLE `user_order` (
   KEY `FKqjg5jrh5qwnhl2f9lk7n77454` (`payment_id`),
   KEY `FKo2lj94xaujs1se8whlhc37nj7` (`shipping_address_id`),
   KEY `FKj86u1x7csa8yd68ql2y1ibrou` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -424,7 +424,7 @@ CREATE TABLE `user_payment` (
   `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK8fb9fr82lb1qk2cw55ito9rk6` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -451,7 +451,7 @@ CREATE TABLE `user_role` (
   PRIMARY KEY (`user_role_id`),
   KEY `FKa68196081fvovjhkek5m97n3y` (`role_id`),
   KEY `FK859n2jvi8ivhui0rl0esws6o` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -484,7 +484,7 @@ CREATE TABLE `user_shipping` (
   `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK9hidca5hndj9y0b5jb0xtpn9u` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
