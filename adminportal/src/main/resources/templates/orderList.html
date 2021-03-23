@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1000/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+	<div th:replace="common/header :: navbar" />
+
+	<div class="container">
+		<div class="table-responsive">
+			<table id="orderListTable"
+				class="table table-bordered table-hover table-striped">
+				<thead>
+					<tr>
+						<th><input th:id="selectAllBooks" type="checkbox" /></th>
+						<th>ID</th>
+						<th>Order Date</th>
+						<th>Shipping Date</th>
+						<th>Shipping Method</th>
+						<th>Order Status</th>
+						<th>Order Total</th>
+						<th colspan="2">Operation</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr data-th-each="order : ${orderList}">
+						<td><input hidden="hidden" name="id" th:value="${order.id}" />
+							<input th:id="'selected'+${order.id}" class="checkboxBook"
+								   type="checkbox" /></td>
+						<td th:text="${order.id}"></td>
+						<td th:text="${order.orderDate}"></td>
+						<td th:text="${order.shippingDate}"></td>
+						<td th:text="${order.shippingMethod}"></td>
+						<td th:text="${order.orderStatus}"></td>
+						<td th:text="${order.orderTotal}"></td>
+						<td><input hidden="hidden" name="id" th:value="${order.id}" />
+							<button th:id="'oneOrder-'+${order.id}"
+								class="btn btn-danger btn-xs book" type="submit"
+								value="delete">
+								<span class="fa fa-times"> Delete </span>
+							</button></td>
+<!--						<td><input hidden="hidden" name="id" th:value="${order.id}" />-->
+<!--							<button th:id="'oneOrder-'+${order.id}"-->
+<!--									class="btn btn-danger btn-xs book" type="submit"-->
+<!--									value="delete">-->
+<!--								<span class="fa fa-times"> Accept </span>-->
+<!--							</button></td>-->
+						<td><a th:href="@{/order/updateOrderStatus(id=${order.id})}"><span
+								th:text="Accept"></span></a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<button th:id="deleteSelected" class="btn btn-danger">Delete Selected</button>
+	</div>
+
+
+	<div th:replace="common/header :: body-bottom-scripts" />
+	<script>
+		$(document).ready(function() {
+			$("#orderkListTable").DataTable({
+				"lengthMenu": ([5,10,15,20,-1],[5,10,15,20,"All"]),
+				"ordering": false,
+				stateSave: true
+			});
+		});
+	</script>
+</body>
+</html>
